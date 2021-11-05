@@ -21,12 +21,12 @@ Route::group(['prefix' => 'admin'], function() {
   
    //web.phpを編集して、admin/profile/createにアクセスしたら ProfileController
    //のadd Actionを割り当てる。
-    Route::get('admin/profile/create', 
+    Route::get('profile/create', 
 'Admin\ProfileController@add');
    
    
    //admin/profile/edit にアクセスしたらProfileControllerの
    //edit Actionに割り当てる。
-    Route::get('admin/profile/edit',
+    Route::get('profile/edit',
 'Admin\ProfileController@edit');
 });
