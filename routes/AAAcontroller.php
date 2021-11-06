@@ -16,6 +16,6 @@ Route::get('/', function () {
 
 //http://XXXXXX.jp/XXXからアクセスが来た場合、
 //AAAControllerのbbbというActionに渡すRoutingの設定。
-Route::group(['prefix' => 'XXX'], function(){
-    Route::get('/', 'XXX\AAAController@bbb');
-});
+
+Route::get('/', 'XXX\AAAController@bbb');
+
