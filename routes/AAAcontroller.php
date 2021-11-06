@@ -17,5 +17,5 @@ Route::get('/', function () {
 //http://XXXXXX.jp/XXXからアクセスが来た場合、
 //AAAControllerのbbbというActionに渡すRoutingの設定。
 
-Route::get('/', 'XXX\AAAController@bbb');
+Route::get('XXX', 'Admin\AAAController@bbb');
 
