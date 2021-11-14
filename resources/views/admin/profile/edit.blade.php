@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible"
-        content="IE=edge">
-        <meta name="viewport" content="width=device-
-        width,initial-scale=1">
-        <title>Mynews課題３の応用</title>
-    </head>
-    <body>
-        <h1>Myニュース課題エディット</h1>
-        <h2>viewportは画面の調整。以下コンテンツも。</h2>
-    </body>
-</html>
+{{-- layout/edit.blade.phpを読み込む --}}
+@extends('layouts.edit')
+
+
+{{-- edit.blade.phpの@yied('title')に'EDIT課題'を埋め込む --}}
+@section('title', 'EDITの課題2')
+
+{{-- edit.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+
+@section('content')
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 mx-auto">
+              <h2>EDITの課題2</h2>
+          </div>
+      </div>
+  </div>
+@endsection  

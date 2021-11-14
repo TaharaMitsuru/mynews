@@ -4,7 +4,7 @@
 
 
 {{-- profile.blade.phpの@yield('title')に'PROFILEの課題'を埋め込む --}}
-@section('title', 'PLOFILEの課題')
+@section('title', 'PLOFILEの課題2')
 
 {{-- profile.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 
@@ -12,7 +12,7 @@
    <div class="container">
        <div class="row">
            <div class="col-md-8 mx-auto">
-               <h2>PLOFILEの課題</h2>
+               <h2>PLOFILEの課題2</h2>
            </div>
        </div>
    </div>
