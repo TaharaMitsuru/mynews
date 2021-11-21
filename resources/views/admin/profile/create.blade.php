@@ -12,7 +12,9 @@
    <div class="container">
        <div class="row">
            <div class="col-md-8 mx-auto">
-               <h2>プロフィール</h2>
+               
+               <h2><strong>プロフィール</strong></h2>
+               
                <form action="{{ action('Admin\ProfileController@create') }}" method="post"
                enctype="multipart/form-data">
                   
@@ -24,17 +26,17 @@
                   </ul>
                   @endif
                <div class="form-gropu row">
-                  <div class="form-group col-md-7">
-                        <label class="col-md-4">氏名</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                  <div class="form-group col-md-8">
+                        <label class="col-md-8">氏名 (name)</label>
+                        <div class="col-md-14">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                   </div>
             
-                  <div class="form-group col-md-5">
-                        <label class="col-md-4">性別</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                  <div class="form-group col-md-4">
+                        <label class="col-md-8">性別 (gender)</label>
+                        <div class="col-md-20">
+                            <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
                         </div>    
                   </div>
                </div>
@@ -42,9 +44,9 @@
                  
                <div class="form-group row">
                   <div class="form-group col-md-8">
-                        <label class="col-md-4">趣味</label>
-                     <div class="col-md-10">
-                        <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                        <label class="col-md-4">趣味 (hobby)</label>
+                     <div class="col-md-20">
+                        <textarea class="form-control form-control-lg" name="hoby" rows="5">{{ old('hoby') }}</textarea>
                      </div>
                   </div>
                </div>
@@ -52,9 +54,9 @@
                
                <div class="form-group row">  
                   <div class="form-group col-md-8">
-                         <label class="col-md-4">自己紹介欄</label>
-                     <div class="col-md-10">
-                        <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                         <label class="col-md-8">自己紹介欄 (introduction)</label>
+                     <div class="col-md-20">
+                        <textarea class="form-control form-control-lg" name="introduction" rows="5">{{ old('introduction') }}</textarea>
                      </div>
                   </div> 
                </div>  
@@ -63,7 +65,7 @@
                <div class="form-group row">
                   <div class="form-group col-md-10">
                           <label class="col-md-2">画像</label>
-                     <div class="col-md-10">
+                     <div class="col-md-20">
                           <input type="file" class="form-control-file" name="image">
                      </div>
                   </div>
