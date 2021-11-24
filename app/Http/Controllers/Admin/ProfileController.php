@@ -24,21 +24,11 @@ class ProfileController extends Controller
         $profile = new Profile;
         $form = $request->all();
         
-        //フォームから画像が送信してきたら、保存して、$profiles->image_passに画像のパスを保存する
-        
-        if (isset($form['image'])){
-            $path = $request->file('image')->store('public/image');
-            $profile->image_pass = basename($path);
-        }   else{
-            $profile->image_pass = null;
-        }
         
         //フォームから送信されてきた_tokenを削除する。
         unset($form['_token']);
-        //フォームから送信されてきたimageを削除する。
-        unset($form['image']);
         
-        //データベースに保存する
+         //データベースに保存する
         $profile->fill($form);
         $profile->save();
         
@@ -47,13 +37,29 @@ class ProfileController extends Controller
         
     }
     
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('admin.profile.edit');
+        // News Modelからデータを取得する
+      $profile = Profile::find($request->id);
+
+      return view('admin.profile.edit', ['profile_form' => $profile]);
+        
+        
     }
     
-    public function update()
+    public function update(Request $request)
     {
-        return redirect('admin/profile/edit');
+        // Validationをかける
+      $this->validate($request, Profile::$rules);
+      // News Modelからデータを取得する
+      $profile = Profile::find($request->id);
+      // 送信されてきたフォームデータを格納する
+      $profile_form = $request->all();
+      unset($profile_form['_token']);
+
+      // 該当するデータを上書きして保存する
+      $profile->fill($profile_form)->save();
+
+      return redirect('admin/profile/');
     }
 }
