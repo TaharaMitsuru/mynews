@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\News;
+//Historyモデルの使用を宣言
+use App\History;
+//Carbonという日付実装ライブラリで取得した現在時刻を
+//History Modelのedited_atとして記録する設定
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -97,7 +102,13 @@ class NewsController extends Controller
         // 該当するデータを上書きして保存する
         $news->fill($news_form)->save();
         
-        return redirect('admin/news');
+        //Historyモデルにも同時に編集履歴を追加するように設定
+        $history = new History();
+        $history->news_id = $news->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
+        
+        return redirect('admin/news/');
         
     }
     //以下を追記
