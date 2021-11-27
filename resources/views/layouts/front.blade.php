@@ -24,8 +24,9 @@
         {{-- Laravel標準で用意されているCSSを読み込みます --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         
-        {{-- 以下を課題で追記 --}}
-        <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
+        
+        {{-- 以下を追記 --}}
+        <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
